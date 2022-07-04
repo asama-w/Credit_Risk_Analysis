@@ -19,7 +19,7 @@ Using use a Python machine learning library, Scikit-learn, to train and apply si
   + **Script:** [credit_risk_ensemble.ipynb](https://github.com/asama-w/Credit_Risk_Analysis/blob/main/credit_risk_ensemble.ipynb)
   + The last 2 algorithms will be applied with Ensemble model
 ### Machine Learning Models:
-This analysis contains 6 machine learning models which will be employed to the dataset to predict the loan status (high risk/low risk) as shown in the following table:
+This analysis contains 6 machine learning models which will be employed to the dataset and predict the loan status (high risk/low risk) as shown in the following table:
 |Classifiers|Machine Learning Model|
 |:-----:|-----|
 |Logistic Regression|Oversampling: <br /> **1. `RandomOverSampler`** <br /> **2. `SMOTE`** <br /><br />  Undersampling: <br />**3. `ClusterCentroids`**<br /><br />  Combination (Over-and-Under) Sampling: <br /> **4. `SMOTEENN`**|
@@ -67,7 +67,7 @@ This analysis contains 6 machine learning models which will be employed to the d
 
 <img src= https://github.com/asama-w/Credit_Risk_Analysis/blob/main/Images/4.png width="80%" height="80%">
 
-### 5. BalancedRandomForestClassifier Model
+### 5. Balanced Random Forest Classifier Model
 + The number of the variables in the train group is `'low_risk': 51366, 'high_risk': 246`.
 + **Balanced Accuracy Score: 78.8%** which is higher than all of the resampling models.
 + The recall values increased noticably for the low-risk to 0.87 (87%), meaning that more actual low-risk credit is correctly detected as low-risk.
@@ -76,7 +76,7 @@ This analysis contains 6 machine learning models which will be employed to the d
 
 <img src= https://github.com/asama-w/Credit_Risk_Analysis/blob/main/Images/5.png width="80%" height="80%">
 
-### 6. EasyEnsembleClassifier
+### 6. Easy Ensemble Classifier Model
 + The number of the variables in the train group is `'low_risk': 51366, 'high_risk': 246`.
 + **Balanced Accuracy Score: 93.2%** which is the highest of all, indicating that this model performs best among the six models on the credit risk prediction.
 + There is a jump in the *precision of high-risk to 0.09 or 9%* and a significant increase in *high-risk's F1 score to 0.16 (16%)*, despite them still considered a low value, these are the highest precision and F1 value for the high-risk in this analysis. This model is more balance between the precision and the recall (sensitivity).
@@ -86,5 +86,5 @@ This analysis contains 6 machine learning models which will be employed to the d
 <img src= https://github.com/asama-w/Credit_Risk_Analysis/blob/main/Images/6.png width="80%" height="80%">
 
 ## Summary
-+ The precision value of low-risk for all the six models is equal to 1. In contrast, the precision value of high-risk of all models are under 0.1 with the highest of 0.09 from the EasyEnsembleClassifier model. This may results from the extreme inbalance number of the two loan status (low and high risk). The number of high-risk data is significantly small when compared to the high number of the low-risk data.
-+ Among the 6 machine learning models, the **EasyEnsembleClassifier** gives the best results with the balance accuracy score of 93.2%, in other words, it is the most suitable model for the credit risk prediction if we were to pick one from this analysis. The values of precision, recall, and F1-score of the low-risk and the average are high, respectively 0.99, 0.94, 0.97, which is nearly 1, indicating a good low-risk prediction as the high F1 value shows that the precision and recall (sensitivity) is balanced. Simply put, using `EasyEnsembleClassifier` model to predict the loan status, most of the customer who has low-risk status are able to be detected (high recall value), and among those detected low-risk, the number of people who actually has low-risk status is also high (high precision). However, since the results for high-risk is still very much low, the model might need considerably more high-risk loan status data in order for it to better train itself to be able to predict the high-risk status effectively.
++ The precision value of low-risk for all the six models is equal to 1. In contrast, the precision value of high-risk of all models are under 0.1 with the highest of 0.09 from the Easy Ensemble Classifier model. This may results from the extreme inbalance number of the two loan status (low and high risk). The number of high-risk data is significantly small when compared to the high number of the low-risk data.
++ Among the 6 machine learning models, the **Easy Ensemble Classifier Model** gives the best results with the **balance accuracy score of 93.2%**, in other words, it is the *most suitable model for the credit risk prediction if we were to pick one from this analysis.* The values of precision, recall, and F1-score of the low-risk and the average are high, respectively 0.99, 0.94, 0.97, which is nearly 1, indicating a good low-risk prediction as the high F1 value shows that the precision and recall (sensitivity) is balanced. Simply put, using `EasyEnsembleClassifier` model to predict the loan status, most of the customer who has low-risk status are able to be detected (high recall value), and among those detected low-risk, the number of people who actually has low-risk status is also high (high precision). However, since the results for high-risk is still very much low, the model might need considerably more high-risk loan status data in order for it to better train itself to be able to predict the high-risk status effectively.
