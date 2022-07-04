@@ -19,7 +19,7 @@ Using use a Python machine learning library, Scikit-learn, to train and apply si
   + **Script:** [credit_risk_ensemble.ipynb](https://github.com/asama-w/Credit_Risk_Analysis/blob/main/credit_risk_ensemble.ipynb)
   + The last 2 algorithms will be applied with Ensemble model
 ### Machine Learning Models:
-There are 6 machine learning models on which the dataset will be applied to predict the loan status (high risk/low risk), using two different classifier models:
+This analysis contains 6 machine learning models which will be employed to the dataset to predict the loan status (high risk/low risk) as shown in the following table:
 |Classifiers|Machine Learning Model|
 |:-----:|-----|
 |Logistic Regression|Oversampling: <br /> **1. `RandomOverSampler`** <br /> **2. `SMOTE`** <br /><br />  Undersampling: <br />**3. `ClusterCentroids`**<br /><br />  Combination (Over-and-Under) Sampling: <br /> **4. `SMOTEENN`**|
@@ -27,19 +27,20 @@ There are 6 machine learning models on which the dataset will be applied to pred
 
 ### Target Variables Balance before resampling:
 + The target of this analysis is the "**Loan Status**", whether the customer's credit is at **high risk** or **low risk**.
++ The following image shows the number of the data samples that will be used to train and test the model.
 <img src= https://github.com/asama-w/Credit_Risk_Analysis/blob/main/Images/target-variable-balance.png width="70%" height="70%">
 
 ### 1. RandomOverSampler Model (Oversampling)
-+ The RandomOverSampler randomly duplicate samples of the minority class (high-risk) to match with the number of majority class (low_risk), of which in this model the trained target variable is 51,366 ('low_risk': 51366, 'high_risk': 51366).
++ The RandomOverSampler randomly duplicates samples of the minority class (high-risk) to match with the number of majority class (low_risk), of which in this model the trained samples are 51,366 (`'low_risk': 51366, 'high_risk': 51366`).
 + **Balanced Accuracy Score: 65.7%**, meaning that the model did quite moderately at predicting the credit risk.
-+ The **precision of the high-risk is extremely low, as of 0.01 (1%)** whereas the precision of low-risk is 1 (100%)
-+ The **recall or sensitivity of the high-risk is 0.71 (71%)** and 0.6 (60%) for low-risk. From recall velue, the model might have a moderately-high chance of predicting the one who migh has high-risk status. However, since the precision is very low, it is unlikely that the those who are predicted to be at high risk will actually have a high credit risk.
++ The **precision of the high-risk is extremely low, as of 0.01** whereas the precision of low-risk is 1 (100%)
++ The **recall or sensitivity of the high-risk is 0.71** and 0.6 for low-risk. From recall velue, the model might have a moderately-high chance of predicting the one who might has high-risk status. However, since the precision is very low, it is unlikely that the those who are predicted to be at high risk will actually have a high credit risk.
 + **The F1 score of high-risk class is 0.02, which is also very low**, meaning that the sensitivity and precision is imbalance. Hence, this model is not suitable for the credit risk prediction.
 
 <img src= https://github.com/asama-w/Credit_Risk_Analysis/blob/main/Images/1.png width="80%" height="80%">
 
 ### 2. SMOTE Model (Oversampling)
-+ The number of the trained data samples of minority class (high-risk) is duplicated to 51,366 ('low_risk': 51366, 'high_risk': 51366).
++ The number of the trained data samples of minority class (high-risk) is duplicated to 51,366 (`'low_risk': 51366, 'high_risk': 51366`).
 + **Balanced Accuracy Score:** 66.2%**, which is slightly higher than the previous RandomOverSampler model, however, it still implies that the model performance is still in the moderate range.
 + The **precision for high-risk and low-risk is 0.01 and 1**, respectively.
 + The recall values is 0.69 for low-risk. The value dropped slightly for the high-risk to 0.63.
@@ -48,7 +49,7 @@ There are 6 machine learning models on which the dataset will be applied to pred
 <img src= https://github.com/asama-w/Credit_Risk_Analysis/blob/main/Images/2.png width="80%" height="80%">
 
 ### 3. ClusterCentroids Model (Undersampling)
-+ The ClusterCentroids Model reduces the number of samples in the majority class to match with the minority's, of which in this case, the number of trained majority's target variable (low-risk) is reduced to 246 (number of samples: 'high_risk': 246, 'low_risk': 246).
++ The ClusterCentroids Model reduces the number of samples in the majority class to match with the minority's, of which in this case, the number of trained majority's samples (low-risk) is reduced to 246 (number of samples: `'high_risk': 246, 'low_risk': 246`).
 + **Balanced Accuracy Score: 55.5%**, which is the lowest among the 6 models in this analysis. The model does not perform very well for predicting the credit risk.
 + The precision of high risk and low-risk is 0.01 and 1, respectively, which is similar to those of the previous two models.
 + The recall and F1 value of the low-risk dropped significantly (low-risk recall = 0.4, low-risk F1 = 0.57) if compared to the previous oversampling models, as a result of the major reduce in the number of low-risk data.
@@ -58,7 +59,7 @@ There are 6 machine learning models on which the dataset will be applied to pred
 <img src= https://github.com/asama-w/Credit_Risk_Analysis/blob/main/Images/3.png width="80%" height="80%">
 
 ### 4. SMOTEENN Model (Combination or Over-and-UnderSampling)
-+ The number of the trained target variables of both the majority (low-risk) and minority class (high-risk) are resampled to balance each other out, the number of trained target samples in this model is as follow: 'high_risk': 68460, 'low_risk': 62011.
++ The number of the trained variables of both the majority (low-risk) and minority class (high-risk) are resampled to balance each other out, the number of trained data samples in this model is as follow: `'high_risk': 68460, 'low_risk': 62011`.
 + **Balanced Accuracy Score: 64.9%**
 + The recall value of the high-risk is 0.72 or 72%, which is the highest among the four resampling models. However, the recall of the low-risk and the average recall value are only slighly over 50%.
 + The high-risk's F1 score is still as low as 0.02. 
@@ -67,19 +68,18 @@ There are 6 machine learning models on which the dataset will be applied to pred
 <img src= https://github.com/asama-w/Credit_Risk_Analysis/blob/main/Images/4.png width="80%" height="80%">
 
 ### 5. BalancedRandomForestClassifier Model
-+ The number of target variables in the train group is 'low_risk': 51366, 'high_risk': 246.
++ The number of the variables in the train group is `'low_risk': 51366, 'high_risk': 246`.
 + **Balanced Accuracy Score: 78.8%** which is higher than all of the resampling models.
 + The recall values increased noticably for the low-risk to 0.87 (87%), meaning that more actual low-risk credit is correctly detected as low-risk.
 + The precision of high-risk is still low, despite an increase to 0.03.
 + The F1 score also increases to 0.06 for high-risk and 0.93 for low-risk.
 
-
 <img src= https://github.com/asama-w/Credit_Risk_Analysis/blob/main/Images/5.png width="80%" height="80%">
 
 ### 6. EasyEnsembleClassifier
-+ The number of target variables in the train group is 'low_risk': 51366, 'high_risk': 246.
++ The number of the variables in the train group is `'low_risk': 51366, 'high_risk': 246`.
 + **Balanced Accuracy Score: 93.2%** which is the highest of all, indicating that this model performs best among the six models on the credit risk prediction.
-+ There is a jump in the *precision of high-risk to 0.09 or 9%* and a significant increase in *high-risk's F1 score to 0.16 (16%)*, despite still being a low value, it is the highest precision and F1 value for the high-risk in this analysis. This model is more balance between the precision and the recall (sensitivity).
++ There is a jump in the *precision of high-risk to 0.09 or 9%* and a significant increase in *high-risk's F1 score to 0.16 (16%)*, despite them still considered a low value, these are the highest precision and F1 value for the high-risk in this analysis. This model is more balance between the precision and the recall (sensitivity).
 + **The recall value is 0.94 for low-risk, and 0.92 for high-risk**, meaning that among the actual loan status, their status are predicted correctly by this model. 
 + **The precision, recall, F1 score values of low-risk and the average are all over 90.** Thus, this model fit best to the prediction of the credit risk.
 
