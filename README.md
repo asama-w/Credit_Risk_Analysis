@@ -27,19 +27,31 @@ There are 6 machine learning models on which the dataset will be applied, using 
 
 
 ### 1. RandomOverSampler Model
++ **Balanced Accuracy Score:** 65.7%
+
 <img src= https://github.com/asama-w/Credit_Risk_Analysis/blob/main/Images/1.png width="80%" height="80%">
 
 ### 2. SMOTE Model
++ **Balanced Accuracy Score:** 66.2%
+ 
 <img src= https://github.com/asama-w/Credit_Risk_Analysis/blob/main/Images/2.png width="80%" height="80%">
 
 ### 3. ClusterCentroids Model
++ **Balanced Accuracy Score:** 55.5%
+
 <img src= https://github.com/asama-w/Credit_Risk_Analysis/blob/main/Images/3.png width="80%" height="80%">
 
 ### 4. SMOTEENN Model
++ **Balanced Accuracy Score:** 64.9%
+
 <img src= https://github.com/asama-w/Credit_Risk_Analysis/blob/main/Images/4.png width="80%" height="80%">
 
 ### 5. BalancedRandomForestClassifier Model
++ **Balanced Accuracy Score:** 78.8%
+
 <img src= https://github.com/asama-w/Credit_Risk_Analysis/blob/main/Images/5.png width="80%" height="80%">
 
 ### 6. EasyEnsembleClassifier
++ **Balanced Accuracy Score:** 93.2%
+
 <img src= https://github.com/asama-w/Credit_Risk_Analysis/blob/main/Images/6.png width="80%" height="80%">
